@@ -1,0 +1,34 @@
+server:
+ port: 9091
+#
+spring:
+ application:
+  name: zuul-server
+#
+#eureka:
+# client:
+#  serviceUrl:
+#   defaultZone: http://localhost:9090/eureka/   -->shifted to common config file properties
+
+#zuul:
+# routes:
+#  products:
+#   path: /api/retail/**
+#   url: http://localhost:8003/
+
+
+zuul:
+  routes:
+    PRODUCT-SERVICE:
+      path: /product/**
+      serviceId: PRODUCT-SERVICE
+    PAYMENT-SERVICE:
+      path: /payment/**
+      serviceId: PAYMENT-SERVICE
+    ORDERS-SERVICE:
+      path: /orders/**
+      serviceId: ORDERS-SERVICE
+    SHOPPINGCART-SERVICE:
+      path: /shoppingcart/**
+      serviceId: SHOPPINGCART-SERVICE     
+ 

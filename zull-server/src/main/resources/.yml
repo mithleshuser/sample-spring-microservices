@@ -1,0 +1,4 @@
+zuul:
+ prefix: /zuulgatway
+ routes:
+   resource
